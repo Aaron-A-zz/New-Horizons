@@ -35,8 +35,7 @@ class GameScene: SKScene {
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        //satellite.position = CGPoint(x: satellite.position.x, y: satellite.position.y + 3)
-        
+
     }
     
 }
