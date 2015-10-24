@@ -27,11 +27,10 @@ class GameScene: SKScene {
         let touch = touches.first! as UITouch
         let touchLocation = touch.locationInNode(self)
         print(touchLocation)
-        satellite.position = touchLocation
+        //satellite.position = touchLocation
         
-        //let move = SKAction.moveTo(touchLocation, duration: 1.0)
-        //satellite.runAction(move)
-        
+        let moveTo = SKAction.moveTo(touchLocation, duration: 1.0)
+        satellite.runAction(moveTo)
     }
    
     override func update(currentTime: CFTimeInterval) {
@@ -39,4 +38,5 @@ class GameScene: SKScene {
         //satellite.position = CGPoint(x: satellite.position.x, y: satellite.position.y + 3)
         
     }
+    
 }
