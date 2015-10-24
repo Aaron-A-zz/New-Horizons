@@ -32,7 +32,6 @@ class GameScene: SKScene {
         //let move = SKAction.moveTo(touchLocation, duration: 1.0)
         //satellite.runAction(move)
         
-        
     }
    
     override func update(currentTime: CFTimeInterval) {
