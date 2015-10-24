@@ -410,6 +410,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.Mav3r1ck.NewHorizons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -421,6 +422,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.Mav3r1ck.NewHorizons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -493,6 +495,7 @@
 				21F5EDE31BD3ACD000F6A78C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21F5EDE41BD3ACD000F6A78C /* Build configuration list for PBXNativeTarget "NewHorizonsTests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +504,7 @@
 				21F5EDE61BD3ACD000F6A78C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		21F5EDE71BD3ACD000F6A78C /* Build configuration list for PBXNativeTarget "NewHorizonsUITests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +513,7 @@
 				21F5EDE91BD3ACD000F6A78C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
