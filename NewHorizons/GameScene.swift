@@ -9,12 +9,9 @@
 import SpriteKit
 
 
-import SpriteKit
-
 class GameScene: SKScene {
     
     let satellite = SKSpriteNode(imageNamed: "Sat2")
-    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
