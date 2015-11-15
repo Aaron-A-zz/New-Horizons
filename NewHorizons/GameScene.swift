@@ -8,25 +8,25 @@
 
 import SpriteKit
 
-var missionDurationLabel = SKLabelNode(text: "Mission Duration")
-var missionMinuteLabel = SKLabelNode(text: "Minute")
-var missionHourLabel = SKLabelNode(text: "Hour")
-var missionDayLabel = SKLabelNode(text: "Day")
-var day = 0
-var hour = 0
-var minute = 0
-var minuteTimeLabel = SKLabelNode(text: "\(minute)")
-var hourTimeLabel = SKLabelNode(text: "\(hour)")
-var dayTimeLabel = SKLabelNode(text: "\(day)")
-var dodgedAsteroids = 0
-var asteroidsDodgedCountLabel = SKLabelNode(text: "0")
-var asteroidsDodgedLabel = SKLabelNode(text: "Asteroids dodged")
-var asteroidsDodgedImage = SKSpriteNode(imageNamed: "AsteroidsDodged")
-let pauseButton = SKSpriteNode(imageNamed: "pause")
-let playButton = SKSpriteNode(imageNamed: "playButton")
-
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    
+    var missionDurationLabel = SKLabelNode(text: "Mission Duration")
+    var missionMinuteLabel = SKLabelNode(text: "Minute")
+    var missionHourLabel = SKLabelNode(text: "Hour")
+    var missionDayLabel = SKLabelNode(text: "Day")
+    var day = 0
+    var hour = 0
+    var minute = 0
+    var minuteTimeLabel = SKLabelNode(text: "")
+    var hourTimeLabel = SKLabelNode(text: "")
+    var dayTimeLabel = SKLabelNode(text: "")
+    var dodgedAsteroids = 0
+    var asteroidsDodgedCountLabel = SKLabelNode(text: "0")
+    var asteroidsDodgedLabel = SKLabelNode(text: "Asteroids dodged")
+    var asteroidsDodgedImage = SKSpriteNode(imageNamed: "AsteroidsDodged")
+    let pauseButton = SKSpriteNode(imageNamed: "pause")
+    let playButton = SKSpriteNode(imageNamed: "playButton")
     
     enum bitMask: UInt32 {
         case satellite = 1
@@ -128,9 +128,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let updateSequence = SKAction.sequence([updateMissionTimeLabels,updateTime])
         runAction((SKAction.repeatActionForever(updateSequence)), withKey: "missionDurationTime")
         
+        let stars = SKEmitterNode(fileNamed: "MyParticle")
+        stars!.position = CGPoint(x: frame.size.width / 2, y: frame.size.height / 2)
+        stars?.zPosition = 0
+        addChild(stars!)
+        
+        
     }
     
-  
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first! as UITouch
         let touchLocation = touch.locationInNode(self)
@@ -234,8 +239,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         enumerateChildNodesWithName("Asteroid") {
             asteroid,_ in
             if asteroid.position.y <= 3 {
-                let newdodgeCount = dodgedAsteroids++
-                asteroidsDodgedCountLabel.text = (text: " \(newdodgeCount)")
+                let newdodgeCount = self.dodgedAsteroids++
+                self.asteroidsDodgedCountLabel.text = (text: " \(newdodgeCount)")
                 asteroid.removeFromParent()
             }
             

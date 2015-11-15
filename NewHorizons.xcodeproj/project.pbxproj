@@ -16,6 +16,8 @@
 		21F5EDC71BD3ACD000F6A78C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21F5EDC51BD3ACD000F6A78C /* LaunchScreen.storyboard */; };
 		21F5EDD21BD3ACD000F6A78C /* NewHorizonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5EDD11BD3ACD000F6A78C /* NewHorizonsTests.swift */; };
 		21F5EDDD1BD3ACD000F6A78C /* NewHorizonsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F5EDDC1BD3ACD000F6A78C /* NewHorizonsUITests.swift */; };
+		933AB8CA1BF8EBFD00A6B774 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 933AB8C81BF8EBFD00A6B774 /* MyParticle.sks */; };
+		933AB8CB1BF8EBFD00A6B774 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 933AB8C91BF8EBFD00A6B774 /* spark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		21F5EDD81BD3ACD000F6A78C /* NewHorizonsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewHorizonsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21F5EDDC1BD3ACD000F6A78C /* NewHorizonsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHorizonsUITests.swift; sourceTree = "<group>"; };
 		21F5EDDE1BD3ACD000F6A78C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		933AB8C81BF8EBFD00A6B774 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
+		933AB8C91BF8EBFD00A6B774 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 		21F5EDAC1BD3ACCF00F6A78C = {
 			isa = PBXGroup;
 			children = (
+				933AB8C81BF8EBFD00A6B774 /* MyParticle.sks */,
+				933AB8C91BF8EBFD00A6B774 /* spark.png */,
 				21F5EDB71BD3ACCF00F6A78C /* NewHorizons */,
 				21F5EDD01BD3ACD000F6A78C /* NewHorizonsTests */,
 				21F5EDDB1BD3ACD000F6A78C /* NewHorizonsUITests */,
@@ -235,9 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				21F5EDBB1BD3ACD000F6A78C /* GameScene.sks in Resources */,
+				933AB8CB1BF8EBFD00A6B774 /* spark.png in Resources */,
 				21F5EDC71BD3ACD000F6A78C /* LaunchScreen.storyboard in Resources */,
 				21F5EDC41BD3ACD000F6A78C /* Assets.xcassets in Resources */,
 				21F5EDC21BD3ACD000F6A78C /* Main.storyboard in Resources */,
+				933AB8CA1BF8EBFD00A6B774 /* MyParticle.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
