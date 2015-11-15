@@ -134,10 +134,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first! as UITouch
         let touchLocation = touch.locationInNode(self)
-        //print(touchLocation)
-        let moveTo = SKAction.moveTo(touchLocation, duration: 1.0)
-        satellite.runAction(moveTo)
+        print(touchLocation)
+        
+        let nodes = self.nodeAtPoint(touchLocation)
+        if nodes.name == "pauseButton" {
+            
+            let showPlayButtonAction = SKAction.runBlock(showPlayButton)
+            let pauseGameAction = SKAction.runBlock(pauseGame)
+            let pauseSequence = SKAction.sequence([showPlayButtonAction, pauseGameAction])
+            runAction(pauseSequence)
+            
+        } else if nodes.name == "playButton" {
+            playButton.hidden = true
+            pauseButton.hidden = false
+            self.view?.paused = false
+            
+        } else {
+            
+            let moveTo = SKAction.moveTo(touchLocation, duration: 1.0)
+            satellite.runAction(moveTo)
+        }
     }
+
     
     
     func randomNumber(min min: CGFloat, max: CGFloat) -> CGFloat {
@@ -200,6 +218,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         minuteTimeLabel.text = "\(minute)"
         hourTimeLabel.text = "\(hour)"
         dayTimeLabel.text = "\(day)"
+    }
+    
+    func pauseGame() {
+        self.view!.paused = true
+    }
+    
+    func showPlayButton() {
+        pauseButton.hidden = true
+        playButton.hidden = false
     }
     
     override func update(currentTime: NSTimeInterval) {
